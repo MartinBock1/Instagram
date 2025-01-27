@@ -1,0 +1,14 @@
+<div>
+    <p>{{post.name}}</p>
+    <img class="fruit_img" src="./../../assets/img/{{ post.img }}" alt="" srcset="" />
+
+    @if(post.liked == true) {
+    <p (click)="toggleHeart()"><img class="heart" src="./../../assets/img/heart-red.png" alt=""> {{post.likes}}
+    </p>
+    } @else {
+    <p (click)="toggleHeart()"><img class="heart" src="./../../assets/img/heart-black.png" alt=""> {{post.likes}}
+    </p>
+    }
+
+    <!-- <a routerLink="contact">CONTACT</a> -->
+</div>
