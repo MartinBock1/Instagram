@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { Post } from '../interfaces/post-interface.component';
@@ -18,28 +18,26 @@ export class MainContentComponent {
       img: 'banana.jpg',
       likes: 95,
       liked: true,
+      comments: ['ist lecker', 'nicht so meins'],
     },
     {
       name: 'Mandy',
       img: 'orange.jpg',
       likes: 3,
       liked: false,
+      comments: ['Absoluter Favorit beim Frühstück'],
     },
     {
       name: 'Nadine',
       img: 'currant.jpg',
       likes: 12,
       liked: true,
+      comments: ['Kann man auch mal machen'],
     },
   ];
 
-  // toggleHeart(index: number) {
-  //   this.postslist[index].liked = !this.postslist[index].liked;
-
-  //   if (this.postslist[index].liked) {
-  //     this.postslist[index].likes++;
-  //   } else {
-  //     this.postslist[index].likes--;
-  //   }
-  // }
+  addCommentToPost(comment: string, index: number) {
+    // console.log(comment);
+    this.postslist[index].comments.push(comment);
+  }  
 }

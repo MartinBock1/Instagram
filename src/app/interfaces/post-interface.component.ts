@@ -3,4 +3,5 @@ export interface Post {
   img: string;
   likes: number;
   liked: boolean;
+  comments: string[];
 }

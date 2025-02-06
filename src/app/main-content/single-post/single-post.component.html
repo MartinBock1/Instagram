@@ -10,5 +10,17 @@
     </p>
     }
 
-    <!-- <a routerLink="contact">CONTACT</a> -->
+    <div>
+        <input [(ngModel)]="inputData" type="text" placeholder="add comment"/>
+            
+        <button (click)="sendInputData()">Send Comment</button>
+    </div>
+
+    @for (comment of post.comments; track comment) {
+    <div>
+        <b>{{ comment}}:</b>
+    </div>
+    } @empty {
+    <li>No comments available.</li>
+    }
 </div>

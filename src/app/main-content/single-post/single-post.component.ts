@@ -1,12 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from '../../interfaces/post-interface.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-single-post',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './single-post.component.html',
   styleUrl: './single-post.component.scss',
 })
@@ -16,6 +17,7 @@ export class SinglePostComponent {
     img: 'banana.png',
     likes: 95,
     liked: true,
+    comments: ['ist lecker', 'nicht so meins'],
   };
 
   toggleHeart() {
@@ -26,5 +28,14 @@ export class SinglePostComponent {
     } else {
       this.post.likes--;
     }
+  }
+
+  inputData = '';
+
+  @Output() comment = new EventEmitter<string>();
+
+  sendInputData() {
+    this.comment.emit(this.inputData);
+    this.inputData = '';
   }
 }
