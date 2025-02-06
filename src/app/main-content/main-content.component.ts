@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [CommonModule, SinglePostComponent, RouterLink],
+  imports: [CommonModule, SinglePostComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
 })
@@ -36,8 +36,15 @@ export class MainContentComponent {
     },
   ];
 
+  /**
+   * Fügt einen Kommentar zu einem bestimmten Beitrag hinzu.
+   *
+   * @param {string} comment - Der Kommentar, der hinzugefügt werden soll.
+   * @param {number} index - Der Index des Beitrags in der Liste, zu dem der Kommentar hinzugefügt wird.
+   * @returns {void} Diese Funktion gibt keinen Wert zurück.
+   */
   addCommentToPost(comment: string, index: number) {
     // console.log(comment);
     this.postslist[index].comments.push(comment);
-  }  
+  }
 }
