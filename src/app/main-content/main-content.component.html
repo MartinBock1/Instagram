@@ -1,3 +1,13 @@
-@for(post of postslist; track $index;){
-    <app-single-post [post]="post" (comment)="addCommentToPost($event, $index)"></app-single-post>
-}
+<div class="content">
+    <div class="post">
+        @for(post of postslist; track $index;){
+        <app-single-post [post]="post" (comment)="addCommentToPost($event, $index)"></app-single-post>
+        }
+        <div class="contact-section">
+            <a routerLink="contact">Hier kommt man zum Kontakt</a>
+        </div>
+    </div>
+    <div>
+        <app-follow></app-follow>
+    </div>
+</div>

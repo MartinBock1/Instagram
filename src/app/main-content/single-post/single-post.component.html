@@ -1,18 +1,18 @@
-<div>
+<div class="post-section">
     <p>{{post.name}}</p>
     <img class="fruit_img" src="./../../assets/img/{{ post.img }}" alt="" srcset="" />
+    <div class="like-section">
+        @if(post.liked == true) {
+        <p (click)="toggleHeart()"><img class="heart" src="./../../assets/img/heart-red.png" alt=""> {{post.likes}}
+        </p>
+        } @else {
+        <p (click)="toggleHeart()"><img class="heart" src="./../../assets/img/heart-black.png" alt=""> {{post.likes}}
+        </p>
+        }
+    </div>
+    <div class="comment-section">
+        <input [(ngModel)]="inputData" type="text" placeholder="add comment" />
 
-    @if(post.liked == true) {
-    <p (click)="toggleHeart()"><img class="heart" src="./../../assets/img/heart-red.png" alt=""> {{post.likes}}
-    </p>
-    } @else {
-    <p (click)="toggleHeart()"><img class="heart" src="./../../assets/img/heart-black.png" alt=""> {{post.likes}}
-    </p>
-    }
-
-    <div>
-        <input [(ngModel)]="inputData" type="text" placeholder="add comment"/>
-            
         <button (click)="sendInputData()">Send Comment</button>
     </div>
 

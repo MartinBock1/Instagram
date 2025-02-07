@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { Post } from '../interfaces/post-interface.component';
 import { RouterLink } from '@angular/router';
+import { SubscribeService } from '../services/subscribe.service';
+import { FollowComponent } from './follow/follow.component';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [CommonModule, SinglePostComponent],
+  imports: [CommonModule, SinglePostComponent, FollowComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
 })

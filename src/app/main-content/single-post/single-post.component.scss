@@ -1,8 +1,50 @@
 .fruit_img {
-    width: 200px;
-    height: 200px;
+    // width: 200px;
+    // height: 200px;
+    width: 300px;
+    margin: 8px 16px;
 }
 
 .heart {
     cursor: pointer;
+    width: 30px;
+}
+
+.comment-section {
+    padding: 16px 8px;
+}
+
+.like-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.likes {
+    cursor: pointer;
+}
+
+.post-section {
+    border: 1px grey solid;
+    margin: 8px;
+    width: 400px;
+    background: rgba($color: #fff, $alpha: 0.5);
+    border-radius: 8px;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >p {
+        font-weight: bold;
+        font-style: italic;
+    }
 }

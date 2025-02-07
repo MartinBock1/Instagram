@@ -1,0 +1,17 @@
+<section>
+    @for (person of subscriberData.subscriberList; track $index) {
+    <div>
+        <h3>{{ person.name }}</h3>
+
+        @if (person.isFollow) {
+        <p>Folgst du</p>
+        } @else{
+        <p>Folgst du nicht</p>
+        } @if (person.isFollowYou) {
+        <p>Folgt dir</p>
+        } @else{
+        <p>Folgt dir nicht</p>
+        }
+    </div>
+    }
+</section>
